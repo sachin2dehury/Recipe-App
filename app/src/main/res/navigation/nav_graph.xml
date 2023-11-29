@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recipeListingFragment">
+
+    <fragment
+        android:id="@+id/recipeListingFragment"
+        android:name="github.sachin2dehury.recipeapp.presentation.listing.RecipeListingFragment"
+        android:label="RecipeListingFragment">
+        <action
+            android:id="@+id/action_recipeListingFragment_to_recipeDetailsFragment"
+            app:destination="@id/recipeDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailsFragment"
+        android:name="github.sachin2dehury.recipeapp.presentation.details.RecipeDetailsFragment"
+        android:label="RecipeDetailsFragment" />
+</navigation>
