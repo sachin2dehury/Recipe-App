@@ -37,6 +37,6 @@ interface RecipeService {
     ): Response<DetailNetworkModel>
 
     companion object {
-        const val BASE_URL = "www.themealdb.com"
+        const val BASE_URL = "https://www.themealdb.com"
     }
 }

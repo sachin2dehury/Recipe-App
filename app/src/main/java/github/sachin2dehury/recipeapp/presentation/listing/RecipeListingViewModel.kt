@@ -10,6 +10,7 @@ import github.sachin2dehury.recipeapp.presentation.listing.model.ListingScreenMo
 import github.sachin2dehury.recipeapp.viewModelIoScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -37,7 +38,7 @@ class RecipeListingViewModel @Inject constructor(
 
                 is ResultType.Error -> _data.update { it.copy(error = result.message) }
             }
-        }
+        }.launchIn(viewModelIoScope)
     }
 
     fun updateFilter(filterModel: FilterModel) {
@@ -60,13 +61,10 @@ class RecipeListingViewModel @Inject constructor(
 
                 is ResultType.Error -> _data.update { it.copy(error = result.message) }
             }
-        }
+        }.launchIn(viewModelIoScope)
     }
 
     init {
         getFilters()
-        data.value.filters?.firstOrNull()?.let {
-            updateFilter(it)
-        }
     }
 }
