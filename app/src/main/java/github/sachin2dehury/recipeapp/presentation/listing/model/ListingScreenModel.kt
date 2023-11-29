@@ -8,5 +8,5 @@ data class ListingScreenModel(
     val filters: List<FilterModel>? = null,
     val selectedFilter: String? = null,
     val recipeList: List<ListingModel>? = null,
-    val error: String? = null
+    val error: String? = null,
 )

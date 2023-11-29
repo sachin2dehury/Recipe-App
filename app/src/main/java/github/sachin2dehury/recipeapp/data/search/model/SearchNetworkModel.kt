@@ -1,12 +1,10 @@
 package github.sachin2dehury.recipeapp.data.search.model
 
-
-import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class SearchNetworkModel(
-    val meals: List<Meal?>? = null
+    val meals: List<Meal?>? = null,
 ) {
     @JsonClass(generateAdapter = true)
     data class Meal(
@@ -62,6 +60,6 @@ data class SearchNetworkModel(
         val strMeasure9: String? = null,
         val strSource: Any? = null,
         val strTags: String? = null,
-        val strYoutube: String? = null
+        val strYoutube: String? = null,
     )
 }
